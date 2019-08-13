@@ -1,13 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const http = require('http');
 
-
-// Prevent Heroku from putting app to sleep
-setInterval(() => {
-    http.get('https://idyll.herokuapp.com');
-}, 300000); // every 5 minutes (300000)
 
 const app = express();
 
