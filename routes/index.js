@@ -484,8 +484,7 @@ router.get(
             const data = {
                 headers: {
                     "x-bingapis-sdk": "true",
-                    "x-rapidapi-key":
-                        "958501ee9amsh9d3d12e4f60702ep1b251bjsn69c843c5ba08",
+                    "x-rapidapi-key": process.env.BING_KEY,
                     "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
                     useQueryString: true,
                 },
