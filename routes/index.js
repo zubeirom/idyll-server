@@ -490,9 +490,10 @@ router.get(
                 },
             };
 
-            const res = await axios.get(url, data);
+            const payload = await axios.get(url, data);
 
-            res.json(res.data);
+            res.json(payload.data);
+            next();
         } catch (error) {
             throw error;
         }
