@@ -501,6 +501,33 @@ router.get(
 );
 
 router.get(
+    "/search",
+    asyncHandler(async (req, res, next) => {
+        try {
+            let value = req.query.q;
+
+            let url = `https://bing-news-search1.p.rapidapi.com/news/search?q=${value}&mkt=en-us&freshness=Day`;
+
+            const data = {
+                headers: {
+                    "x-bingapis-sdk": "true",
+                    "x-rapidapi-key": process.env.BING_KEY,
+                    "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
+                    useQueryString: true,
+                },
+            };
+
+            const payload = await axios.get(url, data);
+
+            res.json(payload.data);
+            next();
+        } catch (error) {
+            throw error;
+        }
+    })
+);
+
+router.get(
     "/reddit",
     asyncHandler(async (req, res, next) => {
         try {
