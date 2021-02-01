@@ -84,14 +84,11 @@ router.get(
         try {
             const mkt = isValid(req.query.locale) ? req.query.locale : "en-us";
 
-            let url = `https://bing-news-search1.p.rapidapi.com/news/search?q=&mkt=${mkt}&freshness=Day&originalImg=true`;
+            let url = `https://api.bing.microsoft.com/v7.0/news/search?q=&mkt=${mkt}&freshness=Day&originalImg=true`;
 
             const data = {
                 headers: {
-                    "x-bingapis-sdk": "true",
-                    "x-rapidapi-key": process.env.BING_KEY,
-                    "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
-                    useQueryString: true,
+                    "Ocp-Apim-Subscription-Key": process.env.BING_KEY,
                 },
             };
 
@@ -478,14 +475,11 @@ router.get(
             let category = req.query.value;
             let locale = req.query.locale;
 
-            let url = `https://bing-news-search1.p.rapidapi.com/news?category=${category}&mkt=${locale}`;
+            let url = `https://api.bing.microsoft.com/v7.0/news?category=${category}&mkt=${locale}`;
 
             const data = {
                 headers: {
-                    "x-bingapis-sdk": "true",
-                    "x-rapidapi-key": process.env.BING_KEY,
-                    "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
-                    useQueryString: true,
+                    "Ocp-Apim-Subscription-Key": process.env.BING_KEY,
                 },
             };
 
@@ -505,14 +499,11 @@ router.get(
         try {
             let value = req.query.q;
 
-            let url = `https://bing-news-search1.p.rapidapi.com/news/search?q=${value}&mkt=en-us&freshness=Day&originalImg=true`;
+            let url = `https://api.bing.microsoft.com/v7.0/news/search?q=${value}&mkt=en-us&freshness=Day&originalImg=true`;
 
             const data = {
                 headers: {
-                    "x-bingapis-sdk": "true",
-                    "x-rapidapi-key": process.env.BING_KEY,
-                    "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
-                    useQueryString: true,
+                    "Ocp-Apim-Subscription-Key": process.env.BING_KEY,
                 },
             };
 
