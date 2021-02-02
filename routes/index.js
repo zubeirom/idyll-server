@@ -178,8 +178,9 @@ router.get(
     asyncHandler(async (req, res, next) => {
         try {
             let value = req.query.q;
+            let locale = req.query.locale;
 
-            let url = `https://api.bing.microsoft.com/v7.0/news/search?q=${value}&mkt=en-us&freshness=Day&originalImg=true`;
+            let url = `https://api.bing.microsoft.com/v7.0/news/search?q=${value}&mkt=${locale}&freshness=Day&originalImg=true`;
 
             const data = {
                 headers: {
